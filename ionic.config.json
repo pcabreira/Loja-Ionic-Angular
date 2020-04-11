@@ -1,0 +1,7 @@
+{
+  "name": "sabordafeira",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
