@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>EDITAR DADOS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none" class="padding">
+    <ion-item no-lines>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input [(ngModel)]="nome" id="nome" (ionBlur)="RemoveValidacao('nome')"></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label position="floating">Sobrenome</ion-label>
+      <ion-input [(ngModel)]="sobrenome" id="sobrenome" (ionBlur)="RemoveValidacao('sobrenome')"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">CPF</ion-label>
+      <ion-input [(ngModel)]="cpf" id="cpf" (keyup)="cpf = somenteNumeros(cpf)" (ionBlur)="cpf = formatCPF(cpf)" name="cpf" (ionBlur)="RemoveValidacao('cpf')" maxlength="11"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Celular com DDD</ion-label>
+      <ion-input [(ngModel)]="celular" (keyup)="celular = somenteNumeros(celular)" (ionBlur)="celular = formatPhone(celular)" id="celular" (ionBlur)="RemoveValidacao('celular')" maxlength="11"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="email" [(ngModel)]="email" id="email" (ionBlur)="RemoveValidacao('email')"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="senha" id="senha" (ionBlur)="RemoveValidacao('senha')"></ion-input>
+    </ion-item>
+  
+    <div class="topTitle">
+      <label>ENDEREÇO DE ENTREGA</label>
+    </div>
+
+    <ion-item no-lines>
+      <ion-label position="floating">CEP</ion-label>
+      <ion-input [(ngModel)]="cep" id="cep" (keyup)="cep = somenteNumeros(cep)" (ionBlur)="cep = formatCep(cep)" (ionBlur)="RemoveValidacao('cep')" maxlength="8"></ion-input>
+    </ion-item>
+    <ion-item no-lines class="rua">      
+        <ion-label position="floating">Endereço</ion-label>
+        <ion-input [(ngModel)]="rua" id="rua"></ion-input>
+    </ion-item>
+    <ion-item no-lines class="num">         
+        <ion-label position="floating">N°</ion-label>
+        <ion-input [(ngModel)]="numero" id="numero"></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label position="floating">Complemento</ion-label>
+      <ion-input [(ngModel)]="complemento" id="complemento"></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label position="floating">Bairro</ion-label>
+      <ion-input [(ngModel)]="bairro" id="bairro"></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label position="floating">Cidade</ion-label>
+      <ion-input [(ngModel)]="cidade" id="cidade"></ion-input>
+    </ion-item>
+
+    <div class="error-message">
+      <label>{{errorMessage}}</label>
+    </div>
+
+    <div class="divBtnConfirmar">
+      <ion-button class="btnPrimary" (click)="CadastrarUsuario()">
+        Confirmar
+      </ion-button>
+    </div>
+  </ion-list>
+
+  <div class="rodape">
+    <div class="divBtnConfirmar">
+      <ion-button class="btnAdd" (click)="voltar()">Adicionar itens</ion-button>
+    </div>
+
+    <div id="btnFazerLogin">
+      Já tem cadastro?<br>
+      <ion-button class="btnSecondary" (click)="modalLogin()">Fazer Login</ion-button>
+    </div>
+  </div>
+</ion-content> 

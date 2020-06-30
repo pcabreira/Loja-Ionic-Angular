@@ -1,1 +1,40 @@
+ion-tab-bar { 
+    border-top: solid 1px #ccc;
+}
+ion-fab-button {
+    height: 45px;
+    width: 100%;
+    --color: var(--ion-color-primary-contrast);
+    --background: none;
+    --box-shadow: none;
+    --border-radius: none;
+  }
+ion-fab {
+    bottom: 58px;
+    width: 100%;
+    height: 45px;
+    right: 0;
+    background: green;
+    border-top: solid 1px #FFF;
+  }
+  .cart-icon {
+    font-size: 25px;
+    width: 10%;
+  }
+  .cart-length {
+    color: #FFF;
+    text-align: left;
+    width: 5%;
+  }
+  .ver {
+      float: left;
+      width: 50%;
+  }
+  .valor {
+    float: left;
+    width: 25%;
+}
 
+::ng-deep .sc-ion-modal-md-h {
+  padding: 5px;
+}

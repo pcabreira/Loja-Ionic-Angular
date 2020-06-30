@@ -1,3 +1,173 @@
-ion-content ion-toolbar {
-  --background: translucent;
+ion-content {
+  --background: #fafafa;
+}
+ion-header::after {
+  background-image: none;
+}
+ion-header ion-toolbar {
+  padding-top: 10px;
+  height: 80px; 
+}
+ion-title {
+  text-align: center;
+  min-height: 40px; 
+  font-size: 14px;
+}
+ion-col {
+  min-width: 100%;
+}
+button:focus {outline:0;}
+
+.navbar-toggler {
+  font-size: 40px;
+}
+.navbarA {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2px;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  min-height: 30px;
+}
+/* Style the buttons inside the tab */
+.tab button {
+  float: left;
+  transition: 0.5s;
+  font-size: 14px;
+  color: #ccc;
+  width: 50%;
+  min-height: 30px;
+  background: #FFF;
+}
+/* Create an active/current tablink class */
+.tab button.active {
+  border-bottom: solid 1px green;
+  color: green;
+  background: #FFF;
+  font-weight: bold;
+  width: 50%;
+  font-size: 14px;
+  min-height: 30px;
+}
+/* Style the tab content */
+.Tab1 {
+  display: none;
+  border-top: none;
+}
+.geral {
+  width: 100%;
+  height: 100%;
+}
+.dataPedido {
+  width: 50%;
+  padding:0 5px 2px 5px;
+  font-size: 12px;
+  color: rgb(160, 160, 160);
+  float: left;
+}
+.d1 {
+  width: 50%;
+  font-size: 15px;
+  height: 100%;
+  padding-top: 8px;
+  text-align: center;
+  color: cadetblue;
+  font-weight: bold;
+  float: left;
+}
+.details {
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  float: left;
+  padding-top: 5px;
+}
+.itemBranco {
+  width: 80%;
+  height: 80%;
+  float: left;
+  padding-left: 5px;
+}
+.btnItens {
+  width: 100%;
+  font-size: 13px;
+  color: green;
+  background: none;
+}
+.d2 {
+  width: 30%;
+  height: 100%;
+  float: left;
+}
+.btnCircle {
+  min-width: 100%;
+  min-height: 100%;
+  color: green;
+}
+.navbar-expand-lg {
+  background: #FFF;
+  box-shadow: 2px 2px 5px 0px rgba(204,204,204,0.3);
+}
+.navbar-nav {
+  font-size: 12px;
+  padding: 5px 10px 5px 10px;
+}
+.produtos {
+  border-top: solid 1px #ccc;
+  padding: 8px 0 8px 0;
+}
+.qtde {
+  width: 10%;
+  margin-right: 5px;
+  float: left;
+  text-align: center;
+  background: green;
+  color: #FFF;
+  border-radius: 5px;
+}
+.nome {
+  width: 68%;
+  float: left;
+}
+.precoQtde {
+  width: 20%;
+  text-align: right;
+  float: left;
+}
+.textRight {
+  text-align: right;
+}
+.valorTotalA {
+  float: left;
+  font-size: 12px;
+  padding: 2px 0 2px 0;
+  font-weight: bold;
+  width: 50%;
+}
+.valorTotalB {
+  float: left;
+  font-size: 12px;
+  padding: 2px 0 2px 0;
+  width: 50%;
+  font-weight: bold;
+}
+.produtosB {
+  padding-top: 10px;
+  border-top: solid 1px #ccc;
+}
+.padFont11Left50 {
+  font-size: 11px;
+  padding: 2px 0 2px 0;
+  float: left;
+  width: 50%;
+}
+
+#tab2Login {
+  text-align: center;
 }

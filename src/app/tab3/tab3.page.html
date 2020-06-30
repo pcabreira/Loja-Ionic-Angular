@@ -1,17 +1,89 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title>PERFIL</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+      <ion-item (click)="toggleGroup(0)" [ngClass]="{active: isGroupShown(0)}">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>
+          <div class="nome">{{ nome }} {{ sobrenome }}</div>
+          <div class="editar">CPF {{ cpf }}</div>
+        </ion-label>
+        <ion-icon name="{{iconePerfil}}"></ion-icon>
+      </ion-item>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+      <div *ngIf="isGroupShown(0)" class="padding">
+        <ion-list>
+          <!-- <ion-item>
+              <ion-label position="floating">Nome</ion-label>
+              <ion-input [(ngModel)]="nome" id="nome" (ionBlur)="RemoveValidacao('nome')"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Sobrenome</ion-label>
+            <ion-input [(ngModel)]="sobrenome" id="sobrenome" (ionBlur)="RemoveValidacao('sobrenome')"></ion-input>
+          </ion-item> 
+          <ion-item>
+            <ion-label position="floating">CPF</ion-label>
+            <ion-input [(ngModel)]="cpf" id="cpf" name="cpf" disabled></ion-input>
+          </ion-item> -->
+          <ion-item>
+            <ion-label position="floating">Celular com DDD</ion-label>
+            <ion-input [(ngModel)]="celular" (keyup)="celular = somenteNumeros(celular)" (ionBlur)="celular = formatPhone(celular)" id="celular" (ionBlur)="RemoveValidacao('celular')" maxlength="11"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input type="email" [(ngModel)]="email" id="email" disabled></ion-input>
+          </ion-item>
+          <br>
+          <ion-button class="btnPrimary" (click)="SalvarUsuario()">
+            Confirmar
+          </ion-button>
+        </ion-list>
+      </div>
+
+      <ion-item (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}">
+        <ion-icon name="location-outline"></ion-icon>
+        <ion-label>
+          <div class="endereco">Endereço</div>
+          <div class="editar">Meu endereço de entrega</div>
+        </ion-label>
+        <ion-icon name="{{iconeEndereco}}"></ion-icon>
+      </ion-item>
+
+      <div *ngIf="isGroupShown(1)" class="padding bottom">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">CEP</ion-label>
+            <ion-input [(ngModel)]="cep" id="cep" (keyup)="cep = somenteNumeros(cep)" (ionBlur)="cep = formatCep(cep)" (ionBlur)="RemoveValidacao('cep')" maxlength="8"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Endereço</ion-label>
+            <ion-input [(ngModel)]="rua" id="rua"></ion-input>
+            <ion-label position="floating">Número</ion-label>
+            <ion-input [(ngModel)]="numero" id="numero"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Complemento</ion-label>
+            <ion-input [(ngModel)]="complemento" id="complemento"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Bairro</ion-label>
+            <ion-input [(ngModel)]="bairro" id="bairro"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Cidade</ion-label>
+            <ion-input [(ngModel)]="cidade" id="cidade"></ion-input>
+          </ion-item>
+          <br>
+          <ion-button class="btnPrimary" (click)="SalvarEndereco()">
+            Confirmar
+          </ion-button> 
+        </ion-list>
+      </div>
+
+      <!-- <ion-item-divider color="light">General settings</ion-item-divider> -->
+  </ion-list>
 </ion-content>

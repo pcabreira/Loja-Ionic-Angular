@@ -1,17 +1,79 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      <ion-button (click)="logoutUser()">SAIR</ion-button>
     </ion-title>
+    <div class="tab">
+      <button class="tablinks" onclick="openMenu(event, 'Frutas')" id="defaultOpen">Frutas</button>
+      <button class="tablinks" onclick="openMenu(event, 'Verduras')">Verduras</button>
+      <!-- <button class="tablinks" onclick="openMenu(event, 'Legumes')">Legumes</button> -->
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-grid id="Frutas" class="tabcontentTab1">
+    <ion-row>
+      <ion-col>
+          <ion-searchbar placeholder="Buscar produto" 
+                         [(ngModel)]="searchTerm" 
+                         (ionChange)="filtrarFrutas()">
+          </ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let produto of Frutas" class="ion-col">
+          <img src="{{ produto.imagem }}" width="80" height="80"><br>
+          <div class="descProd">
+            {{ produto.nome }}<br>
+            <span style="color: #787878;">{{ produto.preco.replace('.',',') }}</span><br>
+            <span style="color: green; font-size: 10px;">{{ produto.medida }}</span>
+          </div>
+          <div class="divCount">
+            <div class="count">
+              <ion-icon name="remove-circle" (click)="decreaseCartItem(produto)" class="btnCircle"></ion-icon>
+            </div>
+            <div class="count top5">
+            {{ produto.quantidade }}
+            </div>
+            <div class="count">
+              <ion-icon name="add-circle" (click)="addToCart(produto)" class="btnCircle"></ion-icon>
+            </div>
+          </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-grid id="Verduras" class="tabcontentTab1">
+    <ion-row>
+      <ion-col>
+          <ion-searchbar placeholder="Buscar produto" 
+                         [(ngModel)]="searchTerm" 
+                         (ionChange)="filtrarFrutas()">
+          </ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let produto of Verduras" class="ion-col">
+        <img src="{{ produto.imagem }}" width="80" height="80"><br>
+        <div class="descProd">
+          {{ produto.nome }}<br>
+          <span style="color: #787878;">{{ produto.preco.replace('.',',') }}</span><br>
+          <span style="color: green; font-size: 10px;">{{ produto.medida }}</span>
+        </div>
+        <div class="divCount">
+          <div class="count">
+            <ion-icon name="remove-circle" (click)="decreaseCartItem(produto)" class="btnCircle"></ion-icon>
+          </div>
+          <div class="count top5">
+          {{ produto.quantidade }}
+          </div>
+          <div class="count">
+            <ion-icon name="add-circle" (click)="addToCart(produto)" class="btnCircle"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br><br><br>
 </ion-content>

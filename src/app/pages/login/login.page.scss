@@ -1,0 +1,88 @@
+ion-input {
+    border-bottom: solid 1px #dcdcdc;
+}
+ion-toolbar {
+    margin-top: 80px;
+    height: 70px;
+    --background: url('../../../imgs/logo.jpg') no-repeat top center;
+}
+ion-header {
+    text-align: right;
+}
+.btnClose {
+    color: black;
+}
+.header-ios ion-toolbar:last-of-type {
+    --border-width: 0 0 0 0;
+}
+.error-message {
+    color: red;
+    width: 100%;
+    text-align: left;
+    font-size: 12px;
+    padding: 0 0 0 20px;
+}
+.error-messageB {
+    color: red;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+}
+.padding {
+    padding: 0 10px 10px 10px;
+}
+ion-header::after {
+    background-image: none;
+}
+.item-interactive.ion-valid {
+    --highlight-background: #FFF;
+}
+.item.sc-ion-label-md-h, .item .sc-ion-label-md-h {
+    font-size: 14px;
+    color: #aaa;
+}
+// .has-focus {
+//     border-bottom: solid 3px #ccc;
+// }
+.item-interactive.ion-invalid {
+    --highlight-background:#f6f6f6;
+}
+.item-native {
+    --border-radius: 10px;
+}
+.header-md:after {
+    background-image: none;
+}
+.list-md {
+    background: none;
+    padding-top: 0;
+}
+.divBtnConfirmar {
+    width: 100%;
+    text-align: center;
+    color: #787878;
+    padding: 10px 0 10px 0;
+}
+.btnPrimary {
+    background: var(--ion-color-primary);
+    color: var(--ion-color-primary-contrast);
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0;
+    width: 80%;
+}
+.btnSecondary {
+    background: var(--ion-color-primary-contrast);
+    color: var(--ion-color-primary);
+    border-radius: 10px;
+    font-size: 12px;
+    margin: 0;
+    width: 50%;
+    border: solid 1px var(--ion-color-primary);
+}
+.button-solid {
+    --background: transparent;
+    --color: transparent;
+    --box-shadow: none;
+}

@@ -1,3 +1,103 @@
-ion-content ion-toolbar {
-  --background: translucent;
+ion-header::after {
+  background-image: none;
+}
+ion-content {
+  --background: #fafafa;
+  --padding-top: 10px;
+}
+ion-header ion-toolbar {
+  height: 110px; 
+}
+ion-title {
+  text-align: center;
+  min-height: 80px;
+  background: url('../../imgs/topoHome.jpg') no-repeat fixed top; 
+}
+ion-button {
+  --box-shadow: 0px 0px 0px 0px;
+}
+.ion-col {
+  background: #FFF;
+  padding: 8px 6px 6px 6px;
+  margin: 2px 1px 2px 3px;
+  text-align: center;
+  min-width: 32%;
+  max-width: 32%;
+  min-height: 180px;
+  float: left;
+  font-size: 13px;
+}
+.divCount {
+  text-align: center;
+  width: 100%;
+  height: 28px;
+}
+.count {
+  text-align: center;
+  float: left;
+  min-width: 33%;
+}
+@media only screen and (max-width: 320px) {
+  .count {
+    text-align: center;
+    float: left;
+    min-width: 27%;
+  }
+}
+.btnCircle {
+  width: 30px;
+  height: 30px;
+  color: green;
+}
+.top5 {
+  padding-top: 5px;
+  font-size: 18px;
+}
+button:focus {outline:0;}
+
+.sc-ion-searchbar-md-h {
+  --box-shadow: none;
+  padding-left: 0; 
+  padding-right: 0; 
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.searchbar-input {
+  --border-radius: 10px;
+  --text-align: left;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  min-height: 30px;
+}
+/* Style the buttons inside the tab */
+.tab button {
+  float: left;
+  transition: 0.5s;
+  font-size: 14px;
+  color: #ccc;
+  width: 50%;
+  min-height: 30px;
+  background: #FFF;
+}
+/* Create an active/current tablink class */
+.tab button.active {
+  border-bottom: solid 1px green;
+  color: green;
+  background: #FFF;
+  font-weight: bold;
+  width: 50%;
+  font-size: 14px;
+  min-height: 30px;
+}
+/* Style the tab content */
+.tabcontentTab1 {
+  display: none;
+  padding: 0px 10px;
+  border-top: none;
+}
+.descProd {
+  min-height: 70px;
 }

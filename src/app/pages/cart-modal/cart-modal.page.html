@@ -1,0 +1,52 @@
+<ion-content class="ion-padding">
+
+  <ion-list>
+    <ion-item *ngFor="let p of cart" class="item">
+
+          <ion-col size="7" class="name">
+            {{ p.nome }}<br>
+            R$ <b>{{ (p.quantidade * p.preco).toFixed(2).replace('.',',') }}</b>
+            <!-- &nbsp;<i class="desc">{{ p.desc }}(s)</i> -->
+          </ion-col>
+
+          <ion-col size="1.5" class="count">
+            <ion-icon name="remove-circle" (click)="decreaseCartItem(p)" class="btnCircle"></ion-icon>
+          </ion-col>
+
+          <ion-col size="2" class="count top5">
+            {{ p.quantidade }}
+          </ion-col>
+
+          <ion-col size="1.5" class="count">
+            <ion-icon name="add-circle" (click)="increaseCartItem(p)" class="btnCircle"></ion-icon>
+          </ion-col>
+
+    </ion-item>
+
+    <ion-button expand="full" (click)="tab01()" class="btnAdd">
+      Adicionar mais itens
+    </ion-button>
+
+    <ion-item>
+      <ion-col size="7" class="freteE">
+        Frete
+      </ion-col>
+      <ion-col size="5" class="frete">
+        R$ 10,00
+      </ion-col>
+    </ion-item>
+
+    <ion-item>
+          <ion-col size="7">
+            <b>Total</b>
+          </ion-col>
+          <ion-col size="5" class="total">
+            R$ {{ getTotal().toFixed(2).replace('.',',') }}
+          </ion-col>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="checkout()" class="btnPrimary">
+    Fazer pedido
+  </ion-button>
+</ion-content>

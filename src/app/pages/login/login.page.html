@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-button (click)="close()" class="btnClose">X</ion-button>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content class="padding">
+  <form [formGroup]="validations_form"  (ngSubmit)="loginUser(validations_form.value)">
+    <ion-list lines="none" class="padding">
+
+      <ion-item>
+        <ion-label  position="floating" color="primary">E-mail</ion-label>
+        <ion-input class="ng-untouched" type="text" formControlName="email" required></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label  position="floating" color="primary">Senha</ion-label>
+        <ion-input type="password" formControlName="password" required></ion-input>
+      </ion-item>  
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.password">
+          <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+    </ion-list>
+
+    <div class="error-messageB">
+        {{ errorMessage }}
+    </div>
+
+    <div class="divBtnConfirmar">
+      <ion-button class="btnPrimary" type="submit" [disabled]="!validations_form.valid">
+        Entrar
+      </ion-button>
+    </div>
+  </form>
+
+  <div class="divBtnConfirmar">
+    Não tem cadastro?<br>
+    <ion-button class="btnSecondary" (click)="goToRegisterPage()">Cadastrar</ion-button>
+  </div>
+</ion-content>

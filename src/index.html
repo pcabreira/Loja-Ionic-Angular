@@ -1,26 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
   <meta charset="utf-8" />
-  <title>Ionic App</title>
-
+  <title>Sabor da Feira</title>
   <base href="/" />
-
   <meta name="color-scheme" content="light dark" />
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="msapplication-tap-highlight" content="no" />
-
-  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
-
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 </head>
 
+<script>
+  function openMenu(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontentTab1");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  function openMenuPedidos(evtA, tab) {
+    var x, tabcontentA, tablinksA;
+    tabcontentA = document.getElementsByClassName("Tab1");
+    for (x = 0; x < tabcontentA.length; x++) {
+      tabcontentA[x].style.display = "none";
+    }
+    tablinksA = document.getElementsByClassName("tablinksP");
+    for (x = 0; x < tablinksA.length; x++) {
+      tablinksA[x].className = tablinksA[x].className.replace(" active", "");
+    }
+    document.getElementById(tab).style.display = "block";
+    evtA.currentTarget.className += " active";
+  }
+</script>
+
 <body>
   <app-root></app-root>
 </body>
-
 </html>

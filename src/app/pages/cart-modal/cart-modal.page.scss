@@ -1,0 +1,57 @@
+.btnCircle {
+    width: 30px;
+    height: 30px;
+    color: green;
+}
+.count {
+    text-align: center;
+    min-height: 60px;
+    padding-top: 15px;
+}
+.top5 {
+    padding-top: 20px;
+}
+.desc {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 11px;
+    color: green;
+}
+.total {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: right;
+}
+.frete {
+    font-size: 14px;
+    text-align: right;
+}
+.freteE {
+    font-size: 14px;
+    text-align: left;
+}
+.btnAdd {
+    --background: transparent;
+    --box-shadow: none;
+    color: green;
+}
+.name {
+    min-height: 60px;
+    line-height: 25px;
+}
+.btnPrimary {
+    background: var(--ion-color-primary);
+    color: var(--ion-color-primary-contrast);
+    border-radius: 40px;
+    font-size: 14px;
+    margin: 0;
+    width: 100%;
+    letter-spacing: -0.2px;
+  }
+ion-item {
+    --inner-padding-end: 0px;
+    --padding-start:0px;
+}
+ion-button {
+    --box-shadow: 0px 0px 0px 0px rgb(180, 180, 180);
+}

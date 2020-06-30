@@ -1,17 +1,91 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title>PEDIDOS</ion-title>
+    <div class="tab">
+      <button class="tablinksP" onclick="openMenuPedidos(event, 'Anteriores')" id="{{openA}}">Anteriores</button>
+      <button class="tablinksP" onclick="openMenuPedidos(event, 'EmAndamento')" id="{{openE}}">Em Andamento</button>
+      <!-- <button class="tablinks" onclick="openMenu(event, 'Legumes')">Legumes</button> -->
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid id="Anteriores" class="Tab1">
+    <ion-row>
+      <ion-col *ngFor="let p of PedidosA" class="ion-col">
+        <nav class="navbarA navbar-expand-lg">
+          <div class="itemBranco">
+            <div class="dataPedido">
+                {{ p.dataEntrada | date:"dd/MM/yyyy hh:mm" }} <br>
+                Código: <b>{{ p.orderRef.substring(0,8) }}</b>
+            </div>
+            <div class="d1">{{ p.status }}</div>
+          </div>
+          <div class="details">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" [attr.data-target]="'#' + p.orderRef" 
+                    [attr.aria-controls]="p.orderRef" aria-expanded="false" aria-label="Toggle navigation">
+              <ion-icon name="search-circle" class="btnCircle"></ion-icon>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="{{p.orderRef}}">
+            <div class="navbar-nav">
+              <div *ngFor="let d of p.produtos" class="produtos">
+                <div class="qtde">{{ d.quantidade }}</div>
+                <div class="nome">{{ d.nome }}</div>
+                <div class="precoQtde">R$ {{ (d.preco * d.quantidade).toFixed(2).replace('.',',') }}</div>
+              </div>
+              <div class="produtosB">
+                <div class="padFont11Left50">Subtotal: </div>
+                <div class="textRight padFont11Left50">R$ {{ (p.valorTotal - 10).toFixed(2).replace('.',',') }}</div>
+                <div class="padFont11Left50">Taxa de entrega: </div>
+                <div class="textRight padFont11Left50">R$ 10,00</div>
+                <div class="valorTotalA">Total: </div>
+                <div class="textRight valorTotalB">R$ {{ p.valorTotal.replace('.',',') }}</div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-grid id="EmAndamento" class="Tab1">
+    <ion-row>
+      <ion-col *ngFor="let p of PedidosE" class="ion-col">
+        <nav class="navbarA navbar-expand-lg">
+          <div class="itemBranco">
+            <div class="dataPedido">
+                {{ p.dataEntrada | date:"dd/MM/yyyy hh:mm" }} <br>
+                Código: <b>{{ p.orderRef.substring(0,8) }}</b>
+            </div>
+            <div class="d1">{{ p.status }}</div>
+          </div>
+          <div class="details">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" [attr.data-target]="'#' + p.orderRef" 
+                    [attr.aria-controls]="p.orderRef" aria-expanded="false" aria-label="Toggle navigation">
+              <ion-icon name="search-circle" class="btnCircle"></ion-icon>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="{{p.orderRef}}">
+            <div class="navbar-nav">
+              <div *ngFor="let d of p.produtos" class="produtos">
+                <div class="qtde">{{ d.quantidade }}</div>
+                <div class="nome">{{ d.nome }}</div>
+                <div class="precoQtde">R$ {{ (d.preco * d.quantidade).toFixed(2).replace('.',',') }}</div>
+              </div>
+              <div class="produtosB">
+                <div class="padFont11Left50">Subtotal: </div>
+                <div class="textRight padFont11Left50">R$ {{ (p.valorTotal - 10).toFixed(2).replace('.',',') }}</div>
+                <div class="padFont11Left50">Taxa de entrega: </div>
+                <div class="textRight padFont11Left50">R$ 10,00</div>
+                <div class="valorTotalA">Total: </div>
+                <div class="textRight valorTotalB">R$ {{ p.valorTotal.replace('.',',') }}</div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
