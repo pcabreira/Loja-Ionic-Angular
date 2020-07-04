@@ -1,7 +1,7 @@
 {
-  "name": "sabordafeira",
+  "name": "lojadigital",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Pedro Cabreira",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
@@ -31,6 +31,7 @@
     "firebase": "^7.14.0",
     "jquery": "^3.5.1",
     "ngx-bootstrap": "^5.6.1",
+    "nvm": "0.0.4",
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.1",
